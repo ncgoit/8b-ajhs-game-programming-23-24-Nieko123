@@ -1,0 +1,11 @@
+#Data type and Opreraters, Nieko Garnes, V0.0
+
+#Variable Rules
+#CANNOT START WITH A NUMBER
+#CANNOT USE BUILT- IN KEYWORDS AS VARIABLES
+#VARIABLE NAME SHOULD DESCRIBE THE DATA BEING STORED.
+#snake_case variables use _ to separate words, all lower case.
+#Camelcase variables do not use spaces, 1st word lower, rest up
+
+# String Literal Examples
+playerName = 
