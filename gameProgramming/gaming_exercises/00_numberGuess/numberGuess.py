@@ -27,6 +27,7 @@ rangeMin = -1
 rangeMax = -1
 numAttempts = -1
 
+
 print("""
     *~~~~~~~~~~~~~~~~~~~~~~~*
     |                       |
@@ -37,7 +38,8 @@ print("""
     """)
 
 # CPU SECRET NUMBER GENERATION
-    secretNumber = random.randint(0, 20)
+secretNumber = random.randint(0, 20)
+# Print(secretNumber)
 
 # GAME LOOP
 print("You need to guess a number from 0 to 20 and you have four guesses. \nIf you get guess it right you get a point.\nIf you can't guess it right the cpu gets a point")
@@ -48,16 +50,41 @@ print("You need to guess a number from 0 to 20 and you have four guesses. \nIf y
 
 while playerScore != 3 or cpuScore != 3:
     #pass -- Tells Python to skip this block of code.
+    #Difficulty code needs to be BEFORE the round starts
+
     print(f"Player Score: {playerScore}\nCPU Score: {cpuScore}.\n")
-    secretNumber = random.randint(rangeMin, rangeMax)
     #Print(secretNumber)
     # ADD CODE HERE TO CHANGE DIFFICULTY BETWEEN EACH ROUND.
+    #Difficulty levels go 1-3
+    difficulty = input("what difficulty would you like to select?")
+    if difficulty == "Easy":
+        print("This is easy mode you have 2 guesses to guess a number 1-3")
+        numbGuesses = 2
+        rangeMin = 1
+        rangeMax = 3
+    elif difficulty == "Meduim":
+        print("This is meduim mode you have 5 guesses for numbers 1-15")
+        numbGuesses = 5
+        rangeMin = 1
+        rangeMax = 15
+    elif difficulty == "Hard":
+        print("This is hard mode be ready you have 4 guesses 1-25")
+        numbGuesses = 4
+        rangeMin = 1
+        rangeMax = 25
+    else:
+        print("Not the right answer, We are setting it to easy")
+        numbGuesses = 2
+        rangeMin = 1
+        rangeMax = 3
+    secretNumber = random.randint(rangeMin, rangeMax)
 
-    
+
+    numAttempts = 0
     for guesses in range(4):
         numGuesses = 0
         print(f"You have {4 - numGuesses} guesses remaining.\n")
-        playerGuess = int(input("Type a number from 0 - 20 and press ENTER.\n"))
+        playerGuess = int(input(f"Type a number from {rangeMin} to {rangeMax} and press ENTER.\n"))
         # input() saves all data as a STRING by defualt.
         # int() will convert to an INTERGER
         # float() will convert to a FLOAT
@@ -72,17 +99,14 @@ while playerScore != 3 or cpuScore != 3:
                 print("Your guess is too high.\n")
             else:
                 print("Your guess is too low.\n")
-        numGuesses += 1
-    if playersGuess != secretNumber:
+        numAttempts += 1
+    if playerGuess != secretNumber:
         cpuScore += 1
         print("The CPU wins a point since you ran out of guesses.\n")
-    if playerScore >= 3:
+
+if playerScore >= 3:
         print("Winner, winner, chicken dinner! You scored 3 points first.\n")
     else:
         print("Yo, you lost to a computer. Youare a scrub.\n")
-
-if playerScore >= 3:
-    print("Winner, winner, chicken dinner! you scored 3 points first!\n")
-else:
-    print("Yo, you lost, lol\n")    
+          
  
