@@ -106,7 +106,7 @@ while playerScore != 3 or cpuScore != 3:
 
 if playerScore >= 3:
         print("Winner, winner, chicken dinner! You scored 3 points first.\n")
-    else:
+else:
         print("Yo, you lost to a computer. Youare a scrub.\n")
           
  
