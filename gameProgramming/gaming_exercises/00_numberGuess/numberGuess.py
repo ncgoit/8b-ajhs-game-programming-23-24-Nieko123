@@ -48,7 +48,7 @@ print("You need to guess a number from 0 to 20 and you have four guesses. \nIf y
 # Use input() to store difficulty in difficulty variable.
 # assign values to numAttempts, rangeMin, and rangeMax based on choice.
 
-while playerScore != 3 or cpuScore != 3:
+while playerScore != 3 and cpuScore != 3: # CHANGE TO and 
     #pass -- Tells Python to skip this block of code.
     #Difficulty code needs to be BEFORE the round starts
 
@@ -56,6 +56,7 @@ while playerScore != 3 or cpuScore != 3:
     #Print(secretNumber)
     # ADD CODE HERE TO CHANGE DIFFICULTY BETWEEN EACH ROUND.
     #Difficulty levels go 1-3
+    # YOU NEED TO EXPLAIN WHAT THE DIFFICULTY LEVELS ARE! 
     difficulty = input("what difficulty would you like to select?")
     if difficulty == "Easy":
         print("This is easy mode you have 2 guesses to guess a number 1-3")
@@ -81,9 +82,9 @@ while playerScore != 3 or cpuScore != 3:
 
 
     numAttempts = 0
-    for guesses in range(4):
+    for guesses in range(4): # Use numGuesses instead of 4.  
         numGuesses = 0
-        print(f"You have {4 - numGuesses} guesses remaining.\n")
+        print(f"You have {4 - numGuesses} guesses remaining.\n") # Use numAttempts instead of 4.  
         playerGuess = int(input(f"Type a number from {rangeMin} to {rangeMax} and press ENTER.\n"))
         # input() saves all data as a STRING by defualt.
         # int() will convert to an INTERGER
