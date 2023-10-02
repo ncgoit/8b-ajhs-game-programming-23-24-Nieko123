@@ -43,6 +43,7 @@ secretNumber = random.randint(0, 20)
 
 # GAME LOOP
 print("You need to guess a number from 0 to 20 and you have four guesses. \nIf you get guess it right you get a point.\nIf you can't guess it right the cpu gets a point")
+print("You have 3 gamemodes Easy, Meduim, Hard")
 # ADD CODE HERE TO CHANGE DIFFICULTY BETWEEN EACH ROUND.
 # print() an explanations of your three difficulty levels.
 # Use input() to store difficulty in difficulty variable.
@@ -59,13 +60,13 @@ while playerScore != 3 and cpuScore != 3: # CHANGE TO and
     # YOU NEED TO EXPLAIN WHAT THE DIFFICULTY LEVELS ARE! 
     difficulty = input("what difficulty would you like to select?")
     if difficulty == "Easy":
-        print("This is easy mode you have 2 guesses to guess a number 1-3")
-        numbGuesses = 2
+        print("This is easy mode you have 2 guesses to guess a number 1 - 3")
+        numGuesses = 2
         rangeMin = 1
         rangeMax = 3
     elif difficulty == "Meduim":
         print("This is meduim mode you have 5 guesses for numbers 1-15")
-        numbGuesses = 5
+        numGuesses = 5
         rangeMin = 1
         rangeMax = 15
     elif difficulty == "Hard":
@@ -75,16 +76,16 @@ while playerScore != 3 and cpuScore != 3: # CHANGE TO and
         rangeMax = 25
     else:
         print("Not the right answer, We are setting it to easy")
-        numbGuesses = 2
+        numGuesses = 2
         rangeMin = 1
         rangeMax = 3
     secretNumber = random.randint(rangeMin, rangeMax)
 
 
-    numAttempts = 0
-    for guesses in range(4): # Use numGuesses instead of 4.  
-        numGuesses = 0
-        print(f"You have {4 - numGuesses} guesses remaining.\n") # Use numAttempts instead of 4.  
+    # numAttempts = 0
+    for guesses in range(numGuesses): # Use numGuesses instead of 4.  
+        # numGuesses = 0
+        print(f"You have {numGuesses - numAttempts} guesses remaining.\n") # Use numAttempts instead of 4.  
         playerGuess = int(input(f"Type a number from {rangeMin} to {rangeMax} and press ENTER.\n"))
         # input() saves all data as a STRING by defualt.
         # int() will convert to an INTERGER
