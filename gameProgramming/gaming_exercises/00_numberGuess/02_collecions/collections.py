@@ -44,17 +44,17 @@ weaponNum = 0
 while weaponNum < len(weaponList):
     if weaponNum == 0 and weaponList[0] == True:
         print("You are wielding a shiny sword.\n")
-    if weaponNum == 0 and weaponList[1] == True:
+    if weaponNum == 1 and weaponList[1] == True:
         print("You have a toasty flamethrower.\n")
-    if weaponNum == 0 and weaponList[2] == True:
+    if weaponNum == 2 and weaponList[2] == True:
         print("You got a gun that shoots more guns.\n")
-    if weaponNum == 0 and weaponList[3] == True:
+    if weaponNum == 3 and weaponList[3] == True:
         print("You have a grappling hook.\n")
-    if weaponNum == 0 and weaponList[4] == True:
+    if weaponNum == 4 and weaponList[4] == True:
         print("You have a missile launcher.\n")
-    if weaponNum == 0 and weaponList[5] == True:
+    if weaponNum == 5 and weaponList[5] == True:
         print("You got a teleporter beam.\n")
-    if weaponNum == 0 and weaponList[6] == True:
+    if weaponNum == 6 and weaponList[6] == True:
         print("You are weilding an alien blaster\n")
     weaponNum += 1
     
