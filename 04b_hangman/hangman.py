@@ -1,38 +1,38 @@
 #Nieko Garnes 8b hangman v0.0
-
+import random
 words = 'glizzy, star, door, list, man, hang, spring, shorts, king, queen, prince, sobber, drunk, kill, taco, burger, chicken, fries, car, bus, code, zebra, lion, grass, feild,young, yellow, red, purple, word'.split()
 
 #VARIABLE_NAMES IN ALL-CAPS ARE CONSTANTS AND NOT MEANT TO CHANGE!
 HANGMAN_BOARD = ['''
     +---+
+           l
+           l
+           l
+    =======''','''
+    +---+
       0    l
-     /l\   l
-     / \   l
+           l
+           l
+    =======''','''
+    +---+
+      0    l
+      l    l
+           l
+    =======''','''
+    +---+
+      0    l
+     /l    l
+           l
     =======''','''
     +---+
       0    l
      /l\   l
-     / \   l
+           l
     =======''','''
     +---+
       0    l
      /l\   l
-     / \   l
-    =======''','''
-    +---+
-      0    l
-     /l\   l
-     / \   l
-    =======''','''
-    +---+
-      0    l
-     /l\   l
-     / \   l
-    =======''','''
-    +---+
-      0    l
-     /l\   l
-     / \   l
+     /     l
     =======''','''
     +---+
       0    l
@@ -40,9 +40,25 @@ HANGMAN_BOARD = ['''
      / \   l
     =======''']
 
-i = 0
-while i < len(HANGMAN_BOARD):
-    print(HANGMAN_BOARD[i])
-    i += 1
+# Pick Word from List
+def getRandomWord(wordList): # Return a random word from the list.
+    wordIndex = random.randint(0, len(wordList) - 1)
+    # len(listName) - 1 is EXTREMELY COMMON FOR WORKING WITH LISTS.
+    return wordList[wordIndex]
+
+def displayBoard(,missedLetters, correctLetters, secretWord):
+    print(HANGMAN_BOARD[len(missedLetters)])
+    print()
+   
+    print('Missed Letters:', end = ' ')
+    for eachLetter in missedLetters:
+        print(eachLetter, end = ' ')
+        print()
+
+# i = 0
+# while i < 100:
+#     word = getRandomWord(words)
+#     print(word)
+#     i += 1
 
 
