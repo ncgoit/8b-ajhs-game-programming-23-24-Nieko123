@@ -16,7 +16,7 @@ HANGMAN_BOARD = ['''
     +---+
       0    l
            l
-          l
+           l
            l
            l
            l
@@ -51,13 +51,32 @@ HANGMAN_BOARD = ['''
      /l\   l
      / \   l
            1
-    =======''']
+        =======''','''
+    +---+
+       0     l
+     o-l-o   l
+      / \    l
+             1
+        =======''','''
+    +---+
+       0       l
+     0-l-0     l
+      / \      l
+     o   o     1
+        =======''']
 
 # Pick Word from List
 def getRandomWord(wordList): # Return a random word from the list.
     wordIndex = random.randint(0, len(wordList) - 1)
     # len(listName) - 1 is EXTREMELY COMMON FOR WORKING WITH LISTS.
     return wordList[wordIndex]
+
+# Pick a word from the dictionary
+def getRandomWord(wordDict): # Return a random word from the list.
+    wordKey = random.choice(list(wordDict.keys()))
+    wordIndex = random.randint(0, len(wordDict[wordKey] - 1))
+    return [wordDict[wordKey][wordIndex], wordKey]
+
 def displayBoard(missedLetters, correctLetters, secretWord):
     print(HANGMAN_BOARD[len(missedLetters)])
     print()
@@ -97,6 +116,24 @@ def playAgain():
 
 # Introduce the Game
 print('Welcome to Hangman by Ryan K.')
+
+# CHOOSE DIFFICULTY
+difficulty = 'X'
+while difficulty not in 'EMH':
+    print('Please Choose Easy, Easy, Meduim Hard. Type the first letter then press enter.\n')
+    difficulty = input().upper()
+if difficulty == 'M': # Medium
+    del HANGMAN_BOARD[8]
+    del HANGMAN_BOARD[7]
+if difficulty == 'H': # Hard
+    del HANGMAN_BOARD[8]
+    del HANGMAN_BOARD[7]
+    del HANGMAN_BOARD[5]
+    del HANGMAN_BOARD[3]
+
+
+
+
 missedLetters = ''
 correctLetters = ''
 secretWord = getRandomWord(words)
