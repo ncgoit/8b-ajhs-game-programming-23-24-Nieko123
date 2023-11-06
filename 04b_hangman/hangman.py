@@ -1,64 +1,64 @@
-
 #Nieko Garnes 8b hangman v0.0
 import random
-words = 'glizzy, star, door, list, man, hang, spring, shorts, king, queen, prince, sobber, drunk, kill, taco, burger, chicken, fries, car, bus, code, zebra, lion, grass, feild,young, yellow, red, purple, word'.split()
+# words = 'glizzy, star, door, list, man, hang, spring, shorts, king, queen, prince, sobber, drunk, kill, taco, burger, chicken, fries, car, bus, code, zebra, lion, grass, feild,young, yellow, red, purple, word'.split()
+# DICTONARY VERSION
+# Stored in Key: Value Pairs.
+# Actual Dictionary word(key) : Value (Definition)
+# Uses {} to specify a dictionary.
+words = {'Colors': 'red orange yellow green blue indigo violet teal garnet gold black white silver gold'.split(),
+         'Animals': 'cat cow dog moose goose fish wombat wolverine giraffe hippo lion alligator'.split(),
+         'Shapes': 'spaure triangle circle rhombus parallelogram trapezoid diamond'.split(),
+         'Foods': 'hamburger hotdog potato waffle pancake escargot oysters chips steak'.split()}
+
+
 #VARIABLE_NAMES IN ALL-CAPS ARE CONSTANTS AND NOT MEANT TO CHANGE!
 HANGMAN_BOARD = ['''
     +---+
       0    l
-     /l\   l
-     / \   l
+           l
+          l
            l
            l
            l
     =======''','''
     +---+
       0    l
-     /l\   l
-     / \   l
-           l
-           l
-    =======''','''
-    +---+
-      0    l
-     /l\   l
-     / \   l
       l    l
            l
+           l
+           l
     =======''','''
     +---+
       0    l
-     /l\   l
-     / \   l
      /l    l
+           1
            l
     =======''','''
     +---+
       0    l
      /l\   l
-     / \   l
+           1
            l
     =======''','''
     +---+
       0    l
      /l\   l
-     / \   l
      /     l
+           1
     =======''','''
     +---+
       0    l
+     /l\   l
      / \   l
+           1
     =======''']
-i = 0
-while i < len(HANGMAN_BOARD):
-    print(HANGMAN_BOARD[i])
-    i += 1
+
 # Pick Word from List
 def getRandomWord(wordList): # Return a random word from the list.
     wordIndex = random.randint(0, len(wordList) - 1)
     # len(listName) - 1 is EXTREMELY COMMON FOR WORKING WITH LISTS.
     return wordList[wordIndex]
-def displayBoard(,missedLetters, correctLetters, secretWord):
+def displayBoard(missedLetters, correctLetters, secretWord):
     print(HANGMAN_BOARD[len(missedLetters)])
     print()
    
@@ -129,6 +129,9 @@ while True:
             print('You have run out of guesses and lost the game.')
             print('You made this number of correction guesses' + str(len(correctLetters)))
             print('The secret word was ' + secretWord)
+
+
+            0
             gameIsDone = True
 
     if gameIsDone:
