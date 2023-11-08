@@ -1,4 +1,4 @@
-#Nieko Garnes 8b hangman v0.0
+#Nieko Garnes 8B V0.0
 import random
 # words = 'glizzy, star, door, list, man, hang, spring, shorts, king, queen, prince, sobber, drunk, kill, taco, burger, chicken, fries, car, bus, code, zebra, lion, grass, feild,young, yellow, red, purple, word'.split()
 # DICTONARY VERSION
@@ -74,7 +74,7 @@ HANGMAN_BOARD = ['''
 # Pick a word from the dictionary
 def getRandomWord(wordDict): # Return a random word from the list.
     wordKey = random.choice(list(wordDict.keys()))
-    wordIndex = random.randint(0, len(wordDict[wordKey] - 1))
+    wordIndex = random.randint(0, len(wordDict[wordKey]) - 1)
     return [wordDict[wordKey][wordIndex], wordKey]
 
 def displayBoard(missedLetters, correctLetters, secretWord):
@@ -115,19 +115,19 @@ def playAgain():
     return input().lower().startswith('y')
 
 # Introduce the Game
-print('Welcome to Hangman by Ryan K.')
+print('Welcome to Hangman byNUI.')
 
 # CHOOSE DIFFICULTY
 difficulty = 'X'
 while difficulty not in 'EMH':
-    print('Please Choose Easy, Easy, Meduim Hard. Type the first letter then press enter.\n')
+    print('Please Choose Easy, Meduim, Hard. Type the first letter then press enter.\n')
     difficulty = input().upper()
 if difficulty == 'M': # Medium
-    del HANGMAN_BOARD[8]
     del HANGMAN_BOARD[7]
+    del HANGMAN_BOARD[6]
 if difficulty == 'H': # Hard
-    del HANGMAN_BOARD[8]
     del HANGMAN_BOARD[7]
+    del HANGMAN_BOARD[6]
     del HANGMAN_BOARD[5]
     del HANGMAN_BOARD[3]
 
