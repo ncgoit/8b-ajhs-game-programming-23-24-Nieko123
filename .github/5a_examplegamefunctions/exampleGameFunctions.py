@@ -7,8 +7,17 @@ def startRace():
 def raceDistance(param1):
     pass
 
-def hurdleSuccess(param1 = "Default Value"):
-    pass
+def hurdleSuccess():
+    choices = ['X', 'A', 'W']
+    computerChoice = random.choice(choices)
+
+    userchoice = input("enter one of the folowing(X,A,W);\n").lower()
+
+    if userchoice not in choices:
+        print("Choice one of the choiceses silly")
+        hurdleSuccess()
+
+    print("CPU choice:", computerChoice)
 
 def raceOutcome(param1, param2, param3):
     pass
@@ -23,6 +32,5 @@ def raceOutcome(laps, speed, place):
         raceLose = True
         return raceLose
     return raceOutcome
-
 
 
