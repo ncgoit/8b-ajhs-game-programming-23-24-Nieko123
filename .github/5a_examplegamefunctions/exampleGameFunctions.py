@@ -7,7 +7,7 @@ def startRace():
 def raceDistance(param1):
     pass
 
-def functionThree(param1 = "Default Value"):
+def hurdleSuccess(param1 = "Default Value"):
     pass
 
 def raceOutcome(param1, param2, param3):
